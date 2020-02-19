@@ -1,5 +1,5 @@
 PKGBUILDs
-==============
+=========
 
 Repository of packages maintained by `rew1red` on the AUR, intended for use with the [`aurpublish` helper](https://github.com/eli-schwartz/aurpublish).
 
