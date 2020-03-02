@@ -10,10 +10,15 @@ help:
 	@echo ""
 	@echo "Commands:"
 	@echo ""
+	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo ""
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish publish-xerox-workcentre-6515-6510 to AUR"
+
+.PHONY: init
+init:
+	@aurpublish setup
 
 .PHONY: update
 update:
@@ -27,10 +32,10 @@ update:
 publish-tableplus: update
 	@echo ""
 	@echo "Publishing tableplus to AUR..."
-	@aurpublish tableplus
+	@aurpublish tableplus --speedup
 
 .PHONY: publish-xerox-workcentre-6515-6510
 publish-xerox-workcentre-6515-6510: update
 	@echo ""
 	@echo "Publishing xerox-workcentre-6515-6510 to AUR..."
-	@aurpublish xerox-workcentre-6515-6510
+	@aurpublish xerox-workcentre-6515-6510 --speedup
