@@ -29,13 +29,13 @@ update:
 	done
 
 .PHONY: publish-tableplus
-publish-tableplus: update
+publish-tableplus:
 	@echo ""
 	@echo "Publishing tableplus to AUR..."
 	@aurpublish tableplus --speedup
 
 .PHONY: publish-xerox-workcentre-6515-6510
-publish-xerox-workcentre-6515-6510: update
+publish-xerox-workcentre-6515-6510:
 	@echo ""
 	@echo "Publishing xerox-workcentre-6515-6510 to AUR..."
 	@aurpublish xerox-workcentre-6515-6510 --speedup
