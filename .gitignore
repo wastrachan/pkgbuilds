@@ -5,9 +5,6 @@
 *.sig
 *.log
 
-# subfolders, e.g. source or built package trees, vcs
-*/**/
-
 # backup files
 *~
 *.bak
