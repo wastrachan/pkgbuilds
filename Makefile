@@ -14,7 +14,8 @@ help:
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo ""
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
-	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish publish-xerox-workcentre-6515-6510 to AUR"
+	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish xerox-workcentre-6515-6510 to AUR"
+	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 
 .PHONY: init
 init:
@@ -22,7 +23,7 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in tableplus xerox-workcentre-6515-6510; do \
+	@for pkg in tableplus xerox-workcentre-6515-6510 git-secret; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
@@ -39,3 +40,9 @@ publish-xerox-workcentre-6515-6510:
 	@echo ""
 	@echo "Publishing xerox-workcentre-6515-6510 to AUR..."
 	@aurpublish xerox-workcentre-6515-6510 --speedup
+
+.PHONY: publish-git-secret
+publish-git-secret:
+	@echo ""
+	@echo "Publishing git-secret to AUR..."
+	@aurpublish git-secret --speedup
