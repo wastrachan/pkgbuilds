@@ -13,9 +13,10 @@ help:
 	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo ""
+	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
+	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish xerox-workcentre-6515-6510 to AUR"
-	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 
 .PHONY: init
 init:
@@ -23,11 +24,23 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in tableplus xerox-workcentre-6515-6510 git-secret; do \
+	@for pkg in git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
 	done
+
+.PHONY: publish-git-secret
+publish-git-secret:
+	@echo ""
+	@echo "Publishing git-secret to AUR..."
+	@aurpublish git-secret --speedup
+
+.PHONY: publish-pcloud-drive
+publish-pcloud-drive:
+	@echo ""
+	@echo "Publishing pcloud-drive to AUR..."
+	@aurpublish pcloud-drive --speedup
 
 .PHONY: publish-tableplus
 publish-tableplus:
@@ -40,9 +53,3 @@ publish-xerox-workcentre-6515-6510:
 	@echo ""
 	@echo "Publishing xerox-workcentre-6515-6510 to AUR..."
 	@aurpublish xerox-workcentre-6515-6510 --speedup
-
-.PHONY: publish-git-secret
-publish-git-secret:
-	@echo ""
-	@echo "Publishing git-secret to AUR..."
-	@aurpublish git-secret --speedup
