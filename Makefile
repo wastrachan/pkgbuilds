@@ -13,6 +13,7 @@ help:
 	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo ""
+	@echo "  publish-1password                    Commit and publish 1password to AUR"
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
@@ -24,11 +25,17 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
+	@for pkg in 1password git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
 	done
+
+.PHONY: publish-1password
+publish-1password:
+	@echo ""
+	@echo "Publishing 1password to AUR..."
+	@aurpublish 1password --speedup
 
 .PHONY: publish-git-secret
 publish-git-secret:
