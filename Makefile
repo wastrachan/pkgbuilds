@@ -12,6 +12,7 @@ help:
 	@echo ""
 	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
+	@echo "  outdated                             Print out-of-date status of all packages"
 	@echo ""
 	@echo "  publish-1password                    Commit and publish 1password to AUR"
 	@echo "  publish-deej                         Commit and publish deej to AUR"
@@ -31,6 +32,10 @@ update:
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
 	done
+
+.PHONY: outdated
+outdated:
+	@./scripts/check_outdated.sh
 
 .PHONY: publish-1password
 publish-1password:
