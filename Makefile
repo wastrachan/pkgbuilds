@@ -14,6 +14,7 @@ help:
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo ""
 	@echo "  publish-1password                    Commit and publish 1password to AUR"
+	@echo "  publish-deej-git                     Commit and publish deej-git to AUR"
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
@@ -25,7 +26,7 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in 1password git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
+	@for pkg in 1password deej-git git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
@@ -36,6 +37,12 @@ publish-1password:
 	@echo ""
 	@echo "Publishing 1password to AUR..."
 	@aurpublish 1password --speedup
+
+.PHONY: publish-deej-git
+publish-deej-git:
+	@echo ""
+	@echo "Publishing deej-git to AUR..."
+	@aurpublish deej-git --speedup
 
 .PHONY: publish-git-secret
 publish-git-secret:

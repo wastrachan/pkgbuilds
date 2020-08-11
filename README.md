@@ -7,6 +7,7 @@ Repository of packages maintained by `rew1red` on the AUR, intended for use with
 ## Packages
 
 * [1password](https://aur.archlinux.org/packages/1password/) : The world's most-loved password manager - read-only development preview
+* [deej-git](https://aur.archlinux.org/packages/deej-git/) : Open-source hardware volume mixer
 * [git-secret](https://aur.archlinux.org/packages/git-secret/) : A bash-tool to store your private data inside a git repository
 * [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/) : pCloud drive. Electron edition
 * [tableplus](https://aur.archlinux.org/packages/tableplus/) : Modern, native, and friendly GUI tool for relational databases (Alpha)
