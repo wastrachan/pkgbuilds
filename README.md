@@ -34,3 +34,4 @@ The following is a normal workflow for testing a change to a pkgbuild:
 3. `makepkg -Ccsfr`
 4. `namcap <pkgname>-<pkgver>-<arch>.pkg.tar.xz`
 5. Delete built package and any downloaded sources
+6. Test in a clean arch build: `make test-<pkgname>`

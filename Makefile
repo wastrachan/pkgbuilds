@@ -1,6 +1,7 @@
 # PKGBUILD Repository Makefile
 #
 # Copyright (c) Winston Astrachan 2020
+PACKAGE :=
 
 .PHONY: help
 help:
@@ -13,6 +14,16 @@ help:
 	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo "  outdated                             Print out-of-date status of all packages"
+	@echo ""
+	@echo "  docker-build                         Build test image"
+	@echo "  docker-clean                         Delete test image"
+	@echo ""
+	@echo "  test-1password                       Test 1password's pkgbuild in docker"
+	@echo "  test-deej                            Test deej's pkgbuild in docker"
+	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
+	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
+	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
+	@echo "  test-xerox-workcentre-6515-6510      Test xerox-workcentre-6515-6510's pkgbuild in docker"
 	@echo ""
 	@echo "  publish-1password                    Commit and publish 1password to AUR"
 	@echo "  publish-deej                         Commit and publish deej to AUR"
@@ -37,38 +48,73 @@ update:
 outdated:
 	@./scripts/check_outdated.sh
 
+.PHONY: docker-build
+docker-build:
+	docker build --tag=pkgbuild .
+
+.PHONY: docker-clean
+docker-clean:
+	docker rmi pkgbuild || true
+	docker image prune -af || true
+
+.PHONY: test-1password
+test-1password: PACKAGE=1password
+test-1password: .test
+
+.PHONY: test-deej
+test-deej: PACKAGE=deej
+test-deej: .test
+
+.PHONY: test-git-secret
+test-git-secret: PACKAGE=git-secret
+test-git-secret: .test
+
+.PHONY: test-pcloud-drive
+test-pcloud-drive: PACKAGE=pcloud-drive
+test-pcloud-drive: .test
+
+.PHONY: test-tableplus
+test-tableplus: PACKAGE=tableplus
+test-tableplus: .test
+
+.PHONY: test-xerox-workcentre-6515-6510
+test-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
+test-xerox-workcentre-6515-6510: .test
+
+.PHONY: .test
+.test: docker-build
+	docker run --rm \
+               --volume=$(shell pwd):/pkg \
+               -w /pkg/${PACKAGE} \
+               --user $(shell id -u):$(shell id -g) \
+               pkgbuild
+
 .PHONY: publish-1password
-publish-1password:
-	@echo ""
-	@echo "Publishing 1password to AUR..."
-	@aurpublish 1password --speedup
+publish-1password: PACKAGE=1password
+publish-1password: .publish
 
 .PHONY: publish-deej
-publish-deej:
-	@echo ""
-	@echo "Publishing deej to AUR..."
-	@aurpublish deej --speedup
+publish-deej: PACKAGE=deej
+publish-deej: .publish
 
 .PHONY: publish-git-secret
-publish-git-secret:
-	@echo ""
-	@echo "Publishing git-secret to AUR..."
-	@aurpublish git-secret --speedup
+publish-git-secret: PACKAGE=git-secret
+publish-git-secret: .publish
 
 .PHONY: publish-pcloud-drive
-publish-pcloud-drive:
-	@echo ""
-	@echo "Publishing pcloud-drive to AUR..."
-	@aurpublish pcloud-drive --speedup
+publish-pcloud-drive: PACKAGE=pcloud-drive
+publish-pcloud-drive: .publish
 
 .PHONY: publish-tableplus
-publish-tableplus:
-	@echo ""
-	@echo "Publishing tableplus to AUR..."
-	@aurpublish tableplus --speedup
+publish-tableplus: PACKAGE=tableplus
+publish-tableplus: .publish
 
 .PHONY: publish-xerox-workcentre-6515-6510
-publish-xerox-workcentre-6515-6510:
+publish-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
+publish-xerox-workcentre-6515-6510: .publish
+
+.PHONY: .publish
+.publish:
 	@echo ""
-	@echo "Publishing xerox-workcentre-6515-6510 to AUR..."
-	@aurpublish xerox-workcentre-6515-6510 --speedup
+	@echo "Publishing ${PACKAGE} to AUR..."
+	@aurpublish ${PACKAGE} --speedup
