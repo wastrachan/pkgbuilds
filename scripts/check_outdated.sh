@@ -63,7 +63,7 @@ fi
 echo ""
 echo "--------------------------------------------------------------- 1password"
 echo ""
-current="$(curl -s https://onepassword.s3.amazonaws.com/linux/debian/dists/edge/main/binary-amd64/Packages | grep "Version:" | head -n 1 | cut -d ':' -f 2 | tr -d ' ' | sed -e 's/-/./')"
+current="$(curl -s https://onepassword.s3.amazonaws.com/linux/debian/dists/edge/main/binary-amd64/Packages | grep "Version:" | head -n 1 | cut -d ':' -f 2 | tr -d ' ' | sed 's/\-/\./g')"
 pkgbuild="$(grep pkgver '1password/.SRCINFO' | cut -d '=' -f 2 | tr -d ' ')"
 if [[ $current != $pkgbuild ]]; then
     echo "!!! 1PASSWORD IS OUTDATED !!!"
