@@ -38,7 +38,7 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in 1password deej git-secret pcloud-drive tableplus xerox-workcentre-6515-6510; do \
+	@for pkg in pcloud-drive tableplus; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
