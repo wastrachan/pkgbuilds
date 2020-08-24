@@ -14,6 +14,7 @@ help:
 	@echo "  init                                 Perform first-time setup (creates aurpublish githooks)"
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo "  outdated                             Print out-of-date status of all packages"
+	@echo "  clean                                Delete build (git ignored) files"
 	@echo ""
 	@echo "  docker-build                         Build test image"
 	@echo "  docker-clean                         Delete test image"
@@ -48,14 +49,17 @@ update:
 outdated:
 	@./scripts/check_outdated.sh
 
+.PHONY: clean
+clean:
+	git clean -Xdi
+
 .PHONY: docker-build
 docker-build:
 	docker build --tag=pkgbuild .
 
 .PHONY: docker-clean
 docker-clean:
-	docker rmi pkgbuild || true
-	docker image prune -af || true
+	docker rmi --force pkgbuild || true
 
 .PHONY: test-1password
 test-1password: PACKAGE=1password
