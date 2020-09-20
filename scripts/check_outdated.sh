@@ -19,6 +19,20 @@ fi
 
 
 echo ""
+echo "-------------------------------------------------------------------- gestures"
+echo ""
+current="$(curl -s https://gitlab.com/api/v4/projects/6631436/releases | grep tag_name | cut -d '"' -f 4 |  cut -d 'v' -f 2)"
+pkgbuild="$(grep pkgver 'gestures/.SRCINFO' | cut -d '=' -f 2 | tr -d ' ')"
+if [[ $current != $pkgbuild ]]; then
+    echo "!!! GESTURES IS OUTDATED !!!"
+    echo "Current version: ${current}"
+    echo "PKGBUILD version: ${pkgbuild}"
+else
+    echo "gestures is current at version ${current}"
+fi
+
+
+echo ""
 echo "-------------------------------------------------------------- git-secret"
 echo ""
 current="$(curl -s https://api.github.com/repos/sobolevn/git-secret/releases/latest | grep tag_name | cut -d '"' -f 4 |  cut -d 'v' -f 2)"
