@@ -21,6 +21,7 @@ help:
 	@echo ""
 	@echo "  test-1password                       Test 1password's pkgbuild in docker"
 	@echo "  test-deej                            Test deej's pkgbuild in docker"
+	@echo "  test-gestures                        Test gestures's pkgbuild in docker"
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
@@ -28,6 +29,7 @@ help:
 	@echo ""
 	@echo "  publish-1password                    Commit and publish 1password to AUR"
 	@echo "  publish-deej                         Commit and publish deej to AUR"
+	@echo "  publish-gestures                     Commit and publish gestures to AUR"
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
@@ -69,6 +71,10 @@ test-1password: .test
 test-deej: PACKAGE=deej
 test-deej: .test
 
+.PHONY: test-gestures
+test-gestures: PACKAGE=gestures
+test-gestures: .test
+
 .PHONY: test-git-secret
 test-git-secret: PACKAGE=git-secret
 test-git-secret: .test
@@ -100,6 +106,10 @@ publish-1password: .publish
 .PHONY: publish-deej
 publish-deej: PACKAGE=deej
 publish-deej: .publish
+
+.PHONY: publish-gestures
+publish-gestures: PACKAGE=gestures
+publish-gestures: .publish
 
 .PHONY: publish-git-secret
 publish-git-secret: PACKAGE=git-secret
