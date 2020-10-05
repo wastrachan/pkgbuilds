@@ -19,7 +19,7 @@ fi
 
 
 echo ""
-echo "-------------------------------------------------------------------- gestures"
+echo "---------------------------------------------------------------- gestures"
 echo ""
 current="$(curl -s https://gitlab.com/api/v4/projects/6631436/releases | grep tag_name | cut -d '"' -f 4 |  cut -d 'v' -f 2)"
 pkgbuild="$(grep pkgver 'gestures/.SRCINFO' | cut -d '=' -f 2 | tr -d ' ')"
