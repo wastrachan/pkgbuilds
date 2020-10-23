@@ -19,7 +19,6 @@ help:
 	@echo "  docker-build                         Build test image"
 	@echo "  docker-clean                         Delete test image"
 	@echo ""
-	@echo "  test-1password                       Test 1password's pkgbuild in docker"
 	@echo "  test-deej                            Test deej's pkgbuild in docker"
 	@echo "  test-gestures                        Test gestures's pkgbuild in docker"
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
@@ -27,7 +26,6 @@ help:
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
 	@echo "  test-xerox-workcentre-6515-6510      Test xerox-workcentre-6515-6510's pkgbuild in docker"
 	@echo ""
-	@echo "  publish-1password                    Commit and publish 1password to AUR"
 	@echo "  publish-deej                         Commit and publish deej to AUR"
 	@echo "  publish-gestures                     Commit and publish gestures to AUR"
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
@@ -63,10 +61,6 @@ docker-build:
 docker-clean:
 	docker rmi --force pkgbuild || true
 
-.PHONY: test-1password
-test-1password: PACKAGE=1password
-test-1password: .test
-
 .PHONY: test-deej
 test-deej: PACKAGE=deej
 test-deej: .test
@@ -98,10 +92,6 @@ test-xerox-workcentre-6515-6510: .test
                -w /pkg/${PACKAGE} \
                --user $(shell id -u):$(shell id -g) \
                pkgbuild
-
-.PHONY: publish-1password
-publish-1password: PACKAGE=1password
-publish-1password: .publish
 
 .PHONY: publish-deej
 publish-deej: PACKAGE=deej

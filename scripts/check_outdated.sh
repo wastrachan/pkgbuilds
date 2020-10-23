@@ -72,17 +72,3 @@ if [[ $current != $pkgbuild ]]; then
 else
     echo "pcloud-drive is current at version ${current}"
 fi
-
-
-echo ""
-echo "--------------------------------------------------------------- 1password"
-echo ""
-current="$(curl -s https://onepassword.s3.amazonaws.com/linux/debian/dists/edge/main/binary-amd64/Packages | grep "Version:" | head -n 1 | cut -d ':' -f 2 | tr -d ' ' | sed 's/\-/\./g')"
-pkgbuild="$(grep pkgver '1password/.SRCINFO' | cut -d '=' -f 2 | tr -d ' ')"
-if [[ $current != $pkgbuild ]]; then
-    echo "!!! 1PASSWORD IS OUTDATED !!!"
-    echo "Current version: ${current}"
-    echo "PKGBUILD version: ${pkgbuild}"
-else
-    echo "1password is current at version ${current}"
-fi
