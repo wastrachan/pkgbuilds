@@ -1,0 +1,31 @@
+[__config__]
+oldver = "/config/old_ver.json"
+newver = "/config/new_ver.json"
+
+[deej]
+source = "github"
+github = "omriharel/deej"
+use_latest_release = "true"
+
+[gestures]
+source = "gitlab"
+gitlab = "cunidev/gestures"
+use_max_tag = "true"
+
+[git-secret]
+source = "github"
+github = "sobolevn/git-secret"
+use_latest_release = "true"
+
+[pcloud-drive]
+source = "regex"
+url = "https://api.pcloud.com/getlastversion?os=ELECTRON"
+regex = "\"version\": \"([\\d\\.]+)\","
+
+[tableplus]
+source = "apt"
+pkg = "tableplus"
+mirror = "https://deb.tableplus.com/debian"
+suite = "tableplus"
+repo = "main"
+arch = "amd64"

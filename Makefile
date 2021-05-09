@@ -1,6 +1,6 @@
 # PKGBUILD Repository Makefile
 #
-# Copyright (c) Winston Astrachan 2020
+# Copyright (c) Winston Astrachan 2021
 PACKAGE :=
 
 .PHONY: help
@@ -47,7 +47,7 @@ update:
 
 .PHONY: outdated
 outdated:
-	@./scripts/check_outdated.sh
+	@./scripts/nvchecker/check_outdated.sh
 
 .PHONY: clean
 clean:
