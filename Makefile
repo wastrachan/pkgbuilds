@@ -24,6 +24,7 @@ help:
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
+	@echo "  test-wireguard-vanity-keygen         Test wireguard-vanity-keygen's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen-bin     Test wireguard-vanity-keygen-bin's pkgbuild in docker"
 	@echo "  test-xerox-workcentre-6515-6510      Test xerox-workcentre-6515-6510's pkgbuild in docker"
 	@echo ""
@@ -32,6 +33,7 @@ help:
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
+	@echo "  publish-wireguard-vanity-keygen      Commit and publish wireguard-vanity-keygen to AUR"
 	@echo "  publish-wireguard-vanity-keygen-bin  Commit and publish wireguard-vanity-keygen-bin to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish xerox-workcentre-6515-6510 to AUR"
 
@@ -83,6 +85,10 @@ test-pcloud-drive: .test
 test-tableplus: PACKAGE=tableplus
 test-tableplus: .test
 
+.PHONY: test-wireguard-vanity-keygen
+test-wireguard-vanity-keygen: PACKAGE=wireguard-vanity-keygen
+test-wireguard-vanity-keygen: .test
+
 .PHONY: test-wireguard-vanity-keygen-bin
 test-wireguard-vanity-keygen-bin: PACKAGE=wireguard-vanity-keygen-bin
 test-wireguard-vanity-keygen-bin: .test
@@ -118,6 +124,10 @@ publish-pcloud-drive: .publish
 .PHONY: publish-tableplus
 publish-tableplus: PACKAGE=tableplus
 publish-tableplus: .publish
+
+.PHONY: publish-wireguard-vanity-keygen
+publish-wireguard-vanity-keygen: PACKAGE=wireguard-vanity-keygen
+publish-wireguard-vanity-keygen: .publish
 
 .PHONY: publish-wireguard-vanity-keygen-bin
 publish-wireguard-vanity-keygen-bin: PACKAGE=wireguard-vanity-keygen-bin
