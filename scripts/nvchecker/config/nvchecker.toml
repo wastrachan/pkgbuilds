@@ -29,3 +29,8 @@ mirror = "https://deb.tableplus.com/debian"
 suite = "tableplus"
 repo = "main"
 arch = "amd64"
+
+[wireguard-vanity-keygen]
+source = "github"
+github = "axllent/wireguard-vanity-keygen"
+use_latest_release = "true"

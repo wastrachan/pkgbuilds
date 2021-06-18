@@ -24,6 +24,7 @@ help:
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
+	@echo "  test-wireguard-vanity-keygen-bin     Test wireguard-vanity-keygen-bin's pkgbuild in docker"
 	@echo "  test-xerox-workcentre-6515-6510      Test xerox-workcentre-6515-6510's pkgbuild in docker"
 	@echo ""
 	@echo "  publish-deej                         Commit and publish deej to AUR"
@@ -31,6 +32,7 @@ help:
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
+	@echo "  publish-wireguard-vanity-keygen-bin  Commit and publish wireguard-vanity-keygen-bin to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish xerox-workcentre-6515-6510 to AUR"
 
 .PHONY: init
@@ -81,6 +83,10 @@ test-pcloud-drive: .test
 test-tableplus: PACKAGE=tableplus
 test-tableplus: .test
 
+.PHONY: test-wireguard-vanity-keygen-bin
+test-wireguard-vanity-keygen-bin: PACKAGE=wireguard-vanity-keygen-bin
+test-wireguard-vanity-keygen-bin: .test
+
 .PHONY: test-xerox-workcentre-6515-6510
 test-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
 test-xerox-workcentre-6515-6510: .test
@@ -112,6 +118,10 @@ publish-pcloud-drive: .publish
 .PHONY: publish-tableplus
 publish-tableplus: PACKAGE=tableplus
 publish-tableplus: .publish
+
+.PHONY: publish-wireguard-vanity-keygen-bin
+publish-wireguard-vanity-keygen-bin: PACKAGE=wireguard-vanity-keygen-bin
+publish-wireguard-vanity-keygen-bin: .publish
 
 .PHONY: publish-xerox-workcentre-6515-6510
 publish-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
