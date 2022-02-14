@@ -9,6 +9,7 @@ Repository of packages maintained by `rew1red` on the AUR, intended for use with
 * [deej](https://aur.archlinux.org/packages/deej/) : Open-source hardware volume mixer
 * [gestures](https://aur.archlinux.org/packages/gestures/) : Modern, minimal GUI app for libinput-gestures
 * [git-secret](https://aur.archlinux.org/packages/git-secret/) : A bash-tool to store your private data inside a git repository
+* [kiibohd-configurator-bin](https://aur.archlinux.org/packages/kiibohd-configurator-bin/) : Configuration utility for Input Club keyboards
 * [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/) : pCloud drive. Electron edition
 * [tableplus](https://aur.archlinux.org/packages/tableplus/) : Modern, native, and friendly GUI tool for relational databases (Alpha)
 * [wireguard-vanity-keygen](https://aur.archlinux.org/packages/wireguard-vanity-keygen/) : WireGuard vanity key generator

@@ -22,6 +22,7 @@ help:
 	@echo "  test-deej                            Test deej's pkgbuild in docker"
 	@echo "  test-gestures                        Test gestures's pkgbuild in docker"
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
+	@echo "  test-kiibohd-configurator-bin        Test kiibohd-configurator-bin's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen         Test wireguard-vanity-keygen's pkgbuild in docker"
@@ -31,6 +32,7 @@ help:
 	@echo "  publish-deej                         Commit and publish deej to AUR"
 	@echo "  publish-gestures                     Commit and publish gestures to AUR"
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
+	@echo "  publish-kiibohd-configurator-bin     Commit and publish kiibohd-configurator-bin to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
 	@echo "  publish-wireguard-vanity-keygen      Commit and publish wireguard-vanity-keygen to AUR"
@@ -77,6 +79,10 @@ test-gestures: .test
 test-git-secret: PACKAGE=git-secret
 test-git-secret: .test
 
+.PHONY: test-kiibohd-configurator-bin
+test-kiibohd-configurator-bin: PACKAGE=kiibohd-configurator-bin
+test-kiibohd-configurator-bin: .test
+
 .PHONY: test-pcloud-drive
 test-pcloud-drive: PACKAGE=pcloud-drive
 test-pcloud-drive: .test
@@ -116,6 +122,10 @@ publish-gestures: .publish
 .PHONY: publish-git-secret
 publish-git-secret: PACKAGE=git-secret
 publish-git-secret: .publish
+
+.PHONY: publish-kiibohd-configurator-bin
+publish-kiibohd-configurator-bin: PACKAGE=kiibohd-configurator-bin
+publish-kiibohd-configurator-bin: .publish
 
 .PHONY: publish-pcloud-drive
 publish-pcloud-drive: PACKAGE=pcloud-drive
