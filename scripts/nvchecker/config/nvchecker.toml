@@ -17,6 +17,11 @@ source = "github"
 github = "sobolevn/git-secret"
 use_latest_release = "true"
 
+[kiibohd-configurator]
+source = "github"
+github = "kiibohd/configurator"
+use_latest_release = "true"
+
 [pcloud-drive]
 source = "regex"
 url = "https://api.pcloud.com/getlastversion?os=ELECTRON"
