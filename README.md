@@ -12,6 +12,7 @@ Repository of packages maintained by `rew1red` on the AUR, intended for use with
 * [kiibohd-configurator-bin](https://aur.archlinux.org/packages/kiibohd-configurator-bin/) : Configuration utility for Input Club keyboards
 * [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/) : pCloud drive. Electron edition
 * [tableplus](https://aur.archlinux.org/packages/tableplus/) : Modern, native, and friendly GUI tool for relational databases (Alpha)
+* [ttf-adobe-source-fonts](https://aur.archlinux.org/packages/ttf-adobe-source-fonts) : TTF versions of Adobe's Source fonts
 * [wireguard-vanity-keygen](https://aur.archlinux.org/packages/wireguard-vanity-keygen/) : WireGuard vanity key generator
 * [wireguard-vanity-keygen-bin](https://aur.archlinux.org/packages/wireguard-vanity-keygen-bin/) : WireGuard vanity key generator
 * [xerox-workcentre-6515-6510](https://aur.archlinux.org/packages/xerox-workcentre-6515-6510/) : Xerox WorkCentre 6515 / Phaser 6510 printer driver for CUPS

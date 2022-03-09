@@ -1,6 +1,3 @@
-# PKGBUILD Repository Makefile
-#
-# Copyright (c) Winston Astrachan 2021
 PACKAGE :=
 
 .PHONY: help
@@ -15,7 +12,6 @@ help:
 	@echo "  update                               Update all packages from AUR (pull co-maintainer edits)"
 	@echo "  outdated                             Print out-of-date status of all packages"
 	@echo "  clean                                Delete build (git ignored) files"
-	@echo ""
 	@echo "  docker-build                         Build test image"
 	@echo "  docker-clean                         Delete test image"
 	@echo ""
@@ -25,6 +21,7 @@ help:
 	@echo "  test-kiibohd-configurator-bin        Test kiibohd-configurator-bin's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
+	@echo "  test-ttf-adobe-source-fonts          Test -ttf-adobe-source-fonts's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen         Test wireguard-vanity-keygen's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen-bin     Test wireguard-vanity-keygen-bin's pkgbuild in docker"
 	@echo "  test-xerox-workcentre-6515-6510      Test xerox-workcentre-6515-6510's pkgbuild in docker"
@@ -35,6 +32,7 @@ help:
 	@echo "  publish-kiibohd-configurator-bin     Commit and publish kiibohd-configurator-bin to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
 	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
+	@echo "  publish-ttf-adobe-source-fonts       Commit and publish -ttf-adobe-source-fonts to AUR"
 	@echo "  publish-wireguard-vanity-keygen      Commit and publish wireguard-vanity-keygen to AUR"
 	@echo "  publish-wireguard-vanity-keygen-bin  Commit and publish wireguard-vanity-keygen-bin to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510   Commit and publish xerox-workcentre-6515-6510 to AUR"
@@ -91,6 +89,10 @@ test-pcloud-drive: .test
 test-tableplus: PACKAGE=tableplus
 test-tableplus: .test
 
+.PHONY: test-ttf-adobe-source-fonts
+test-ttf-adobe-source-fonts: PACKAGE=ttf-adobe-source-fonts
+test-ttf-adobe-source-fonts: .test
+
 .PHONY: test-wireguard-vanity-keygen
 test-wireguard-vanity-keygen: PACKAGE=wireguard-vanity-keygen
 test-wireguard-vanity-keygen: .test
@@ -134,6 +136,10 @@ publish-pcloud-drive: .publish
 .PHONY: publish-tableplus
 publish-tableplus: PACKAGE=tableplus
 publish-tableplus: .publish
+
+.PHONY: publish-ttf-adobe-source-fonts
+publish-ttf-adobe-source-fonts: PACKAGE=ttf-adobe-source-fonts
+publish-ttf-adobe-source-fonts: .publish
 
 .PHONY: publish-wireguard-vanity-keygen
 publish-wireguard-vanity-keygen: PACKAGE=wireguard-vanity-keygen

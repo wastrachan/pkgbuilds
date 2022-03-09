@@ -35,6 +35,21 @@ suite = "tableplus"
 repo = "main"
 arch = "amd64"
 
+[ttf-adobe-source-code-pro]
+source = "github"
+github = "adobe-fonts/source-code-pro"
+use_latest_release = "true"
+
+[ttf-adobe-source-sans]
+source = "github"
+github = "adobe-fonts/source-sans"
+use_latest_release = "true"
+
+[ttf-adobe-source-serif]
+source = "github"
+github = "adobe-fonts/source-serif"
+use_latest_release = "true"
+
 [wireguard-vanity-keygen]
 source = "github"
 github = "axllent/wireguard-vanity-keygen"
