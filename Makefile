@@ -20,7 +20,6 @@ help:
 	@echo "  test-git-secret                      Test git-secret's pkgbuild in docker"
 	@echo "  test-kiibohd-configurator-bin        Test kiibohd-configurator-bin's pkgbuild in docker"
 	@echo "  test-pcloud-drive                    Test pcloud-drive's pkgbuild in docker"
-	@echo "  test-tableplus                       Test tableplus's pkgbuild in docker"
 	@echo "  test-ttf-adobe-source-fonts          Test -ttf-adobe-source-fonts's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen         Test wireguard-vanity-keygen's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen-bin     Test wireguard-vanity-keygen-bin's pkgbuild in docker"
@@ -31,7 +30,6 @@ help:
 	@echo "  publish-git-secret                   Commit and publish git-secret to AUR"
 	@echo "  publish-kiibohd-configurator-bin     Commit and publish kiibohd-configurator-bin to AUR"
 	@echo "  publish-pcloud-drive                 Commit and publish pcloud-drive to AUR"
-	@echo "  publish-tableplus                    Commit and publish tableplus to AUR"
 	@echo "  publish-ttf-adobe-source-fonts       Commit and publish -ttf-adobe-source-fonts to AUR"
 	@echo "  publish-wireguard-vanity-keygen      Commit and publish wireguard-vanity-keygen to AUR"
 	@echo "  publish-wireguard-vanity-keygen-bin  Commit and publish wireguard-vanity-keygen-bin to AUR"
@@ -43,7 +41,7 @@ init:
 
 .PHONY: update
 update:
-	@for pkg in pcloud-drive tableplus; do \
+	@for pkg in pcloud-drive; do \
 		echo ""; \
 		echo "Pulling $$pkg changes from AUR..."; \
 		aurpublish -p $$pkg; \
@@ -84,10 +82,6 @@ test-kiibohd-configurator-bin: .test
 .PHONY: test-pcloud-drive
 test-pcloud-drive: PACKAGE=pcloud-drive
 test-pcloud-drive: .test
-
-.PHONY: test-tableplus
-test-tableplus: PACKAGE=tableplus
-test-tableplus: .test
 
 .PHONY: test-ttf-adobe-source-fonts
 test-ttf-adobe-source-fonts: PACKAGE=ttf-adobe-source-fonts
@@ -132,10 +126,6 @@ publish-kiibohd-configurator-bin: .publish
 .PHONY: publish-pcloud-drive
 publish-pcloud-drive: PACKAGE=pcloud-drive
 publish-pcloud-drive: .publish
-
-.PHONY: publish-tableplus
-publish-tableplus: PACKAGE=tableplus
-publish-tableplus: .publish
 
 .PHONY: publish-ttf-adobe-source-fonts
 publish-ttf-adobe-source-fonts: PACKAGE=ttf-adobe-source-fonts

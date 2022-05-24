@@ -27,14 +27,6 @@ source = "regex"
 url = "https://api.pcloud.com/getlastversion?os=ELECTRON"
 regex = "\"version\": \"([\\d\\.]+)\","
 
-[tableplus]
-source = "apt"
-pkg = "tableplus"
-mirror = "https://deb.tableplus.com/debian"
-suite = "tableplus"
-repo = "main"
-arch = "amd64"
-
 [ttf-adobe-source-code-pro]
 source = "github"
 github = "adobe-fonts/source-code-pro"
