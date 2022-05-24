@@ -17,6 +17,15 @@ source = "github"
 github = "sobolevn/git-secret"
 use_latest_release = "true"
 
+[google-cloud-sdk-gke-gcloud-auth-plugin]
+source = "apt"
+pkg = "google-cloud-cli-gke-gcloud-auth-plugin"
+mirror = "https://packages.cloud.google.com/apt"
+suite = "cloud-sdk"
+repo = "main"
+arch = "amd64"
+# https://packages.cloud.google.com/apt/dists/cloud-sdk/main/binary-amd64/Packages
+
 [kiibohd-configurator]
 source = "github"
 github = "kiibohd/configurator"
