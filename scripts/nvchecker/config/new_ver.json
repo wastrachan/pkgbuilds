@@ -1,8 +1,8 @@
 {
   "deej": "v0.9.10",
-  "gestures": "0.3.0",
+  "gestures": "0.3.1",
   "git-secret": "v0.5.0",
-  "google-cloud-sdk-gke-gcloud-auth-plugin": "406.0.0-0",
+  "google-cloud-sdk-gke-gcloud-auth-plugin": "407.0.0-0",
   "kiibohd-configurator": "v1.1.0",
   "pcloud-drive": "1.9.9",
   "ttf-adobe-source-code-pro": "2.038R-ro/1.058R-it/1.018R-VAR",
