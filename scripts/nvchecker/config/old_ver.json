@@ -1,13 +1,12 @@
 {
-    "deej": "v0.9.10",
-    "gestures": "0.3.1",
-    "git-secret": "v0.5.0",
-    "google-cloud-sdk-gke-gcloud-auth-plugin": "410.0.0-0",
-    "kiibohd-configurator": "v1.1.0",
-    "pcloud-drive": "1.9.9",
-    "ttf-adobe-source-code-pro": "2.038R-ro/1.058R-it/1.018R-VAR",
-    "ttf-adobe-source-sans": "3.046R",
-    "ttf-adobe-source-serif": "4.004R",
-    "wireguard-vanity-keygen": "0.0.3"
-  }
-  
+  "deej": "v0.9.10",
+  "gestures": "0.3.1",
+  "git-secret": "v0.5.0",
+  "google-cloud-sdk-gke-gcloud-auth-plugin": "411.0.0-0",
+  "kiibohd-configurator": "v1.1.0",
+  "pcloud-drive": "1.9.9",
+  "ttf-adobe-source-code-pro": "2.038R-ro/1.058R-it/1.018R-VAR",
+  "ttf-adobe-source-sans": "3.046R",
+  "ttf-adobe-source-serif": "4.004R",
+  "wireguard-vanity-keygen": "0.0.3"
+}
