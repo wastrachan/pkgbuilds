@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker run -v "$(pwd)/scripts/nvchecker/config:/config" \
+docker run -v "$(pwd)/.scripts/nvchecker/config:/config" \
            --name nvchecker \
            --rm \
            -e PUID=1000 \

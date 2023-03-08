@@ -9,7 +9,7 @@ RUN \
     useradd -m ${BUILDUSER} && \
     echo "${BUILDUSER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${BUILDUSER}
 
-COPY scripts/docker/docker-entrypoint.sh docker-entrypoint.sh
+COPY .scripts/docker/docker-entrypoint.sh docker-entrypoint.sh
 USER ${BUILDUSER}
 VOLUME /pkg
 

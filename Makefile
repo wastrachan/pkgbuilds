@@ -18,7 +18,7 @@ help:
 	@echo "  test-deej                                       Test deej's pkgbuild in docker"
 	@echo "  test-gestures                                   Test gestures's pkgbuild in docker"
 	@echo "  test-git-secret                                 Test git-secret's pkgbuild in docker"
-	@echo "  test-google-cloud-sdk-gke-gcloud-auth-plugin    Test google-cloud-sdk-gke-gcloud-auth-plugin's pkgbuild in docker"
+	@echo "  test-google-cloud-cli-gke-gcloud-auth-plugin    Test google-cloud-cli-gke-gcloud-auth-plugin's pkgbuild in docker"
 	@echo "  test-kiibohd-configurator-bin                   Test kiibohd-configurator-bin's pkgbuild in docker"
 	@echo "  test-pcloud-drive                               Test pcloud-drive's pkgbuild in docker"
 	@echo "  test-ttf-adobe-source-fonts                     Test -ttf-adobe-source-fonts's pkgbuild in docker"
@@ -29,7 +29,7 @@ help:
 	@echo "  publish-deej                                    Commit and publish deej to AUR"
 	@echo "  publish-gestures                                Commit and publish gestures to AUR"
 	@echo "  publish-git-secret                              Commit and publish git-secret to AUR"
-	@echo "  publish-google-cloud-sdk-gke-gcloud-auth-plugin Commit and publish google-cloud-sdk-gke-gcloud-auth-plugin to AUR"
+	@echo "  publish-google-cloud-cli-gke-gcloud-auth-plugin Commit and publish google-cloud-cli-gke-gcloud-auth-plugin to AUR"
 	@echo "  publish-kiibohd-configurator-bin                Commit and publish kiibohd-configurator-bin to AUR"
 	@echo "  publish-pcloud-drive                            Commit and publish pcloud-drive to AUR"
 	@echo "  publish-ttf-adobe-source-fonts                  Commit and publish -ttf-adobe-source-fonts to AUR"
@@ -51,7 +51,7 @@ update:
 
 .PHONY: outdated
 outdated:
-	@./scripts/nvchecker/check_outdated.sh
+	@./.scripts/nvchecker/check_outdated.sh
 
 .PHONY: clean
 clean:
@@ -77,9 +77,9 @@ test-gestures: .test
 test-git-secret: PACKAGE=git-secret
 test-git-secret: .test
 
-.PHONY: test-google-cloud-sdk-gke-gcloud-auth-plugin
-test-google-cloud-sdk-gke-gcloud-auth-plugin: PACKAGE=google-cloud-sdk-gke-gcloud-auth-plugin
-test-google-cloud-sdk-gke-gcloud-auth-plugin: .test
+.PHONY: test-google-cloud-cli-gke-gcloud-auth-plugin
+test-google-cloud-cli-gke-gcloud-auth-plugin: PACKAGE=google-cloud-cli-gke-gcloud-auth-plugin
+test-google-cloud-cli-gke-gcloud-auth-plugin: .test
 
 .PHONY: test-kiibohd-configurator-bin
 test-kiibohd-configurator-bin: PACKAGE=kiibohd-configurator-bin
@@ -125,9 +125,9 @@ publish-gestures: .publish
 publish-git-secret: PACKAGE=git-secret
 publish-git-secret: .publish
 
-.PHONY: publish-google-cloud-sdk-gke-gcloud-auth-plugin
-publish-google-cloud-sdk-gke-gcloud-auth-plugin: PACKAGE=google-cloud-sdk-gke-gcloud-auth-plugin
-publish-google-cloud-sdk-gke-gcloud-auth-plugin: .publish
+.PHONY: publish-google-cloud-cli-gke-gcloud-auth-plugin
+publish-google-cloud-cli-gke-gcloud-auth-plugin: PACKAGE=google-cloud-cli-gke-gcloud-auth-plugin
+publish-google-cloud-cli-gke-gcloud-auth-plugin: .publish
 
 .PHONY: publish-kiibohd-configurator-bin
 publish-kiibohd-configurator-bin: PACKAGE=kiibohd-configurator-bin

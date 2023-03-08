@@ -9,7 +9,7 @@ Repository of packages maintained by `rew1red` on the AUR, intended for use with
 * [deej](https://aur.archlinux.org/packages/deej/) : Open-source hardware volume mixer
 * [gestures](https://aur.archlinux.org/packages/gestures/) : Modern, minimal GUI app for libinput-gestures
 * [git-secret](https://aur.archlinux.org/packages/git-secret/) : A bash-tool to store your private data inside a git repository
-* [google-cloud-sdk-gke-gcloud-auth-plugin](https://aur.archlinux.org/packages/google-cloud-sdk-gke-gcloud-auth-plugin): A google-cloud-sdk component that provides a kubectl authentication plugin for GKE.
+* [google-cloud-cli-gke-gcloud-auth-plugin](https://aur.archlinux.org/packages/google-cloud-cli-gke-gcloud-auth-plugin): A google-cloud-cli component that provides a kubectl authentication plugin for GKE.
 * [kiibohd-configurator-bin](https://aur.archlinux.org/packages/kiibohd-configurator-bin/) : Configuration utility for Input Club keyboards
 * [pcloud-drive](https://aur.archlinux.org/packages/pcloud-drive/) : pCloud drive. Electron edition
 * [ttf-adobe-source-fonts](https://aur.archlinux.org/packages/ttf-adobe-source-fonts) : TTF versions of Adobe's Source fonts
