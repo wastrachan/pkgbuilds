@@ -2,7 +2,7 @@
     "deej": "v0.9.10",
     "gestures": "0.3.1",
     "git-secret": "v0.5.0",
-    "google-cloud-cli-gke-gcloud-auth-plugin": "424.0.0-0",
+    "google-cloud-cli-gke-gcloud-auth-plugin": "425.0.0-0",
     "kiibohd-configurator": "v1.1.0",
     "pcloud-drive": "1.11.0",
     "ttf-adobe-source-code-pro": "2.040R-u/1.060R-i/1.024R-vf",
@@ -10,4 +10,3 @@
     "ttf-adobe-source-serif": "4.005R",
     "wireguard-vanity-keygen": "0.0.5"
   }
-  
