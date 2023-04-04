@@ -5,8 +5,8 @@
   "google-cloud-cli-gke-gcloud-auth-plugin": "424.0.0-0",
   "kiibohd-configurator": "v1.1.0",
   "pcloud-drive": "1.11.0",
-  "ttf-adobe-source-code-pro": "2.038R-ro/1.058R-it/1.018R-VAR",
-  "ttf-adobe-source-sans": "3.046R",
+  "ttf-adobe-source-code-pro": "2.040R-u/1.060R-i/1.024R-vf",
+  "ttf-adobe-source-sans": "3.052R",
   "ttf-adobe-source-serif": "4.005R",
   "wireguard-vanity-keygen": "0.0.5"
 }
