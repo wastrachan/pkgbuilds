@@ -9,7 +9,7 @@ use_latest_release = "true"
 
 [gestures]
 source = "gitlab"
-gitlab = "cunidev/gestures"
+gitlab = "nokun/gestures"
 use_max_tag = "true"
 
 [git-secret]
