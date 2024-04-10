@@ -1,6 +1,6 @@
 pkgbase = beekeeper-studio-bin
 	pkgdesc = Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
-	pkgver = 4.2.5
+	pkgver = 4.2.9
 	pkgrel = 1
 	url = https://www.beekeeperstudio.io
 	arch = x86_64
@@ -16,11 +16,11 @@ pkgbase = beekeeper-studio-bin
 	depends = xdg-utils
 	provides = beekeeper-studio
 	conflicts = beekeeper-studio
-	source = beekeeper-studio-4.2.5-license::https://github.com/beekeeper-studio/beekeeper-studio/raw/v4.2.5/LICENSE.md
+	source = beekeeper-studio-4.2.9-license::https://github.com/beekeeper-studio/beekeeper-studio/raw/v4.2.9/LICENSE.md
 	sha256sums = 1409fbbc5265c85da91684660c87f85d74c3fdc63a2d355169f40dac5cc7a078
-	source_x86_64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v4.2.5/beekeeper-studio_4.2.5_amd64.deb
-	sha256sums_x86_64 = 973460590cec53da20bebd35e5d873492dc4272946565cb983e84eec0824d1c8
-	source_aarch64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v4.2.5/beekeeper-studio_4.2.5_arm64.deb
-	sha256sums_aarch64 = 892bae12bdfa6ca5ef91928e9f581d9c99484d1bcefb2734a9faafaf60543474
+	source_x86_64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v4.2.9/beekeeper-studio_4.2.9_amd64.deb
+	sha256sums_x86_64 = dd427ba6592683943c358b8bea8ea52edc3f03a56dcb0f93d6fb3da760b89887
+	source_aarch64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v4.2.9/beekeeper-studio_4.2.9_arm64.deb
+	sha256sums_aarch64 = 5e26d0ce5832c7b44ab1a4f3deed88c49c62f299a869f2d7352f1c876225b667
 
 pkgname = beekeeper-studio-bin
