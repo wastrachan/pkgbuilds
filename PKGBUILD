@@ -2,7 +2,7 @@
 
 pkgname=wireguard-vanity-keygen-bin
 _shortname=wireguard-vanity-keygen
-pkgver=0.0.8
+pkgver=0.0.9
 pkgrel=1
 pkgdesc='WireGuard vanity key generator'
 arch=('x86_64' 'aarch64' 'i686' 'arm')
@@ -15,10 +15,10 @@ source_x86_64=("https://github.com/axllent/wireguard-vanity-keygen/releases/down
 source_aarch64=("https://github.com/axllent/wireguard-vanity-keygen/releases/download/${pkgver}/${_shortname}-linux-arm64.tar.gz")
 source_i686=("https://github.com/axllent/wireguard-vanity-keygen/releases/download/${pkgver}/${_shortname}-linux-386.tar.gz")
 source_arm=("https://github.com/axllent/wireguard-vanity-keygen/releases/download/${pkgver}/${_shortname}-linux-arm.tar.gz")
-sha256sums_x86_64=('571d2d0142a0a52079c3637961f0d24465e019f5927a1e284ea9d2a2905fdf50')
-sha256sums_aarch64=('e0a5c1806740d0a179556ab66dff9454e00b4b1d40ff2adb5118c82bf6a9bc41')
-sha256sums_i686=('85a9455410d71f9a84886b3c90e7bb59de0782adbdf57ef6f5409bc7c65b1285')
-sha256sums_arm=('f0638ee14518a15ae650644f2d44970b2b0b00cc1b0585e9c35ca466390e8a9e')
+sha256sums_x86_64=('11175b1af6bee0f0d3d466029738f6d16a52b0c5c0d032b5dda2d6f7ce199bba')
+sha256sums_aarch64=('9eb9c2fcaff1da6b7020b98f7997e5e5c7a3d147574f117b1a9dbe211c182401')
+sha256sums_i686=('86ab7fca789ce0f0ab1e6d5e3f5c8b1f7e5af07b45784fbfef6b69242498cb99')
+sha256sums_arm=('0944463a733d6294b13071fe0d50efb4d8a6148fd06b1a38a41b7ca634c078cb')
 
 package() {
     # Upstream uses different format for architechture notation
