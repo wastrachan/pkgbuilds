@@ -12,7 +12,7 @@
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
 pkgver=4.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
 license=('MIT')
@@ -38,7 +38,7 @@ prepare() {
   chmod ugo+x "$_pkgsrc.$_pkgext"
   "./$_pkgsrc.$_pkgext" --appimage-extract
 
-  sed -E -e "s&^Exec=.*\$&Exec=$_pkgname %F&" "squashfs-root/$_pkgname.desktop"
+  sed -E -e "s&^Exec=.*\$&Exec=$_pkgname %F&" -i "squashfs-root/$_pkgname.desktop"
 }
 
 package() {
