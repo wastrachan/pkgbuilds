@@ -1,7 +1,7 @@
 # Maintainer: Winston Astrachan <winston dot astrachan at gmail dot com>
 
 pkgname=google-cloud-cli-gke-gcloud-auth-plugin
-pkgver=491.0.0
+pkgver=492.0.0
 pkgrel=1
 pkgdesc="A google-cloud-cli component that provides a kubectl authentication plugin for GKE."
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('Apache-2.0')
 depends=('google-cloud-cli' 'kubectl>=1.26')
 options=('!strip')
 source=("https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/${pkgname}_${pkgver}.orig_amd64.tar.gz")
-sha256sums=('a78ec3c38fc26d858426a8f147e398f05664ce3aec091e6a08af4b86c02fb53c')
+sha256sums=('085c3578e757cf69db68fcf71c62171239fab3a33ac450f91d915b3273a6290a')
 
 package() {
     cd "$srcdir/google-cloud-sdk"  # Does not match naming convention google-cloud-cli
