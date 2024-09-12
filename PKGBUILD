@@ -12,11 +12,16 @@
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
 pkgver=4.6.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
 license=('MIT')
 arch=('x86_64' 'aarch64')
+
+optdepends=(
+  'dbus-glib: used by libgconf'
+  'gtk2: used by libappindicator'
+)
 
 provides=("$_pkgname")
 conflicts=("$_pkgname")
@@ -44,8 +49,6 @@ prepare() {
 package() {
   depends+=(
     'alsa-lib'
-    'dbus-glib'
-    'gtk2'
     'gtk3'
     'libdbusmenu-glib'
     'nspr'

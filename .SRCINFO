@@ -1,11 +1,13 @@
 pkgbase = beekeeper-studio-bin
 	pkgdesc = Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
 	pkgver = 4.6.2
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/beekeeper-studio/beekeeper-studio
 	arch = x86_64
 	arch = aarch64
 	license = MIT
+	optdepends = dbus-glib: used by libgconf
+	optdepends = gtk2: used by libappindicator
 	provides = beekeeper-studio
 	conflicts = beekeeper-studio
 	source = Beekeeper-Studio-4.6.2-license.txt::https://github.com/beekeeper-studio/beekeeper-studio/raw/v4.6.2/LICENSE.md
@@ -17,8 +19,6 @@ pkgbase = beekeeper-studio-bin
 
 pkgname = beekeeper-studio-bin
 	depends = alsa-lib
-	depends = dbus-glib
-	depends = gtk2
 	depends = gtk3
 	depends = libdbusmenu-glib
 	depends = nspr
