@@ -11,8 +11,8 @@
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=4.6.2
-pkgrel=3
+pkgver=4.6.8
+pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
 license=('MIT')
@@ -32,8 +32,8 @@ source=("$_pkgsrc-license.txt"::"$url/raw/v$pkgver/LICENSE.md")
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc-arm64.$_pkgext")
 sha256sums=('1409fbbc5265c85da91684660c87f85d74c3fdc63a2d355169f40dac5cc7a078')
-sha256sums_x86_64=('f2c18536802c5fe5f72090d7a7095846defc9e891ab8f633f3cc83118cba34ff')
-sha256sums_aarch64=('52bacb443458f68b4e3f5846b0d04f0bffaf364415f659ddfb466e07c0eaa692')
+sha256sums_x86_64=('2f23bdc42a991b980d02f0885fdc1a7126f9f7088b8d73c3b5af858a9bb6e1f9')
+sha256sums_aarch64=('10a18bf9a7ae09c06e4a1f95b647601612352dc72ebcef161e8a9b67f25d5fb7')
 
 prepare() {
   if [[ "$CARCH" == "aarch64" ]]; then
