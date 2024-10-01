@@ -25,6 +25,7 @@ help:
 	@echo "  test-wireguard-vanity-keygen                    Test wireguard-vanity-keygen's pkgbuild in docker"
 	@echo "  test-wireguard-vanity-keygen-bin                Test wireguard-vanity-keygen-bin's pkgbuild in docker"
 	@echo "  test-xerox-workcentre-6515-6510                 Test xerox-workcentre-6515-6510's pkgbuild in docker"
+	@echo "  test-brother-mfc-l3780cdw                       Test brother-mfc-l3780cdw's pkgbuild in docker"
 	@echo ""
 	@echo "  publish-deej                                    Commit and publish deej to AUR"
 	@echo "  publish-gestures                                Commit and publish gestures to AUR"
@@ -36,6 +37,7 @@ help:
 	@echo "  publish-wireguard-vanity-keygen                 Commit and publish wireguard-vanity-keygen to AUR"
 	@echo "  publish-wireguard-vanity-keygen-bin             Commit and publish wireguard-vanity-keygen-bin to AUR"
 	@echo "  publish-xerox-workcentre-6515-6510              Commit and publish xerox-workcentre-6515-6510 to AUR"
+	@echo "  publish-brother-mfc-l3780cdw                    Commit and publish brother-mfc-l3780cdw to AUR"
 
 .PHONY: init
 init:
@@ -105,6 +107,10 @@ test-wireguard-vanity-keygen-bin: .test
 test-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
 test-xerox-workcentre-6515-6510: .test
 
+.PHONY: test-brother-mfc-l3780cdw
+test-brother-mfc-l3780cdw: PACKAGE=brother-mfc-l3780cdw
+test-brother-mfc-l3780cdw: .test
+
 .PHONY: .test
 .test: docker-build
 	docker run --rm \
@@ -152,6 +158,10 @@ publish-wireguard-vanity-keygen-bin: .publish
 .PHONY: publish-xerox-workcentre-6515-6510
 publish-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
 publish-xerox-workcentre-6515-6510: .publish
+
+.PHONY: publish-brother-mfc-l3780cdw
+publish-brother-mfc-l3780cdw: PACKAGE=brother-mfc-l3780cdw
+publish-brother-mfc-l3780cdw: .publish
 
 .PHONY: .publish
 .publish:
