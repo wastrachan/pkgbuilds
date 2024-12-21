@@ -9,9 +9,11 @@
 # https://www.beekeeperstudio.io
 # https://github.com/beekeeper-studio/beekeeper-studio
 
+: ${_install_path:=usr/lib}
+
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=4.6.8
+pkgver=5.0.9
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
@@ -28,12 +30,14 @@ conflicts=("$_pkgname")
 
 _pkgsrc="Beekeeper-Studio-$pkgver"
 _pkgext="AppImage"
+
 source=("$_pkgsrc-license.txt"::"$url/raw/v$pkgver/LICENSE.md")
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc-arm64.$_pkgext")
-sha256sums=('1409fbbc5265c85da91684660c87f85d74c3fdc63a2d355169f40dac5cc7a078')
-sha256sums_x86_64=('2f23bdc42a991b980d02f0885fdc1a7126f9f7088b8d73c3b5af858a9bb6e1f9')
-sha256sums_aarch64=('10a18bf9a7ae09c06e4a1f95b647601612352dc72ebcef161e8a9b67f25d5fb7')
+
+sha256sums=('22b5a35031423ff3998ed524ff7464e071d25ad99fab5ce2ebb67158e62f7b17')
+sha256sums_x86_64=('0c0c58d9be96025f659600ebe52365be9f199f042e54a56b0b84fefb51728991')
+sha256sums_aarch64=('2b2ee7a30722ecf369f4801b9a7af55bcfac37c03d7f605a901454407c75e076')
 
 prepare() {
   if [[ "$CARCH" == "aarch64" ]]; then
@@ -55,30 +59,28 @@ package() {
     'nss'
   )
 
-  local _install_path="$pkgdir/opt/$_pkgname"
-
   # main files
-  install -dm755 "$_install_path"
-  mv squashfs-root/* "$_install_path/"
+  install -dm755 "$pkgdir/$_install_path/$_pkgname"
+  mv squashfs-root/* "$pkgdir/$_install_path/$_pkgname/"
 
   # share
   install -dm755 "$pkgdir/usr/share"
-  cp -a --reflink=auto "$_install_path/usr/share/icons" "$pkgdir/usr/share/"
-  cp -a --reflink=auto "$_install_path/usr/share/mime" "$pkgdir/usr/share/"
+  cp -a --reflink=auto "$pkgdir/$_install_path/$_pkgname/usr/share/icons" "$pkgdir/usr/share/"
+  cp -a --reflink=auto "$pkgdir/$_install_path/$_pkgname/usr/share/mime" "$pkgdir/usr/share/"
 
-  install -Dm755 "$_install_path/$_pkgname.desktop" -t "$pkgdir/usr/share/applications/"
+  install -Dm755 "$pkgdir/$_install_path/$_pkgname/$_pkgname.desktop" -t "$pkgdir/usr/share/applications/"
 
   # script
   install -Dm755 /dev/stdin "$pkgdir/usr/bin/$_pkgname" << END
 #!/usr/bin/env sh
-exec "/opt/$_pkgname/$_pkgname" "\$@"
+exec "/$_install_path/$_pkgname/$_pkgname" "\$@"
 END
 
   # licenses
   install -Dm644 "$_pkgsrc-license.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 \
-    "$pkgdir/opt/$_pkgname/LICENSE.electron.txt" \
-    "$pkgdir/opt/$_pkgname/LICENSES.chromium.html" \
+    "$pkgdir/$_install_path/$_pkgname/LICENSE.electron.txt" \
+    "$pkgdir/$_install_path/$_pkgname/LICENSES.chromium.html" \
     -t "${pkgdir}/usr/share/licenses/$pkgname/"
 
   # permissions
