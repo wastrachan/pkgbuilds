@@ -17,7 +17,7 @@
       "url": "https://github.com/sobolevn/git-secret/releases/tag/v0.5.0"
     },
     "google-cloud-cli-gke-gcloud-auth-plugin": {
-      "version": "502.0.0-0"
+      "version": "504.0.1-0"
     },
     "kiibohd-configurator": {
       "version": "v1.1.0",
@@ -43,9 +43,9 @@
       "url": "https://github.com/adobe-fonts/source-serif/releases/tag/4.005R"
     },
     "wireguard-vanity-keygen": {
-      "version": "0.1.0",
-      "gitref": "refs/tags/0.1.0",
-      "url": "https://github.com/axllent/wireguard-vanity-keygen/releases/tag/0.1.0"
+      "version": "0.1.1",
+      "gitref": "refs/tags/0.1.1",
+      "url": "https://github.com/axllent/wireguard-vanity-keygen/releases/tag/0.1.1"
     }
   }
 }

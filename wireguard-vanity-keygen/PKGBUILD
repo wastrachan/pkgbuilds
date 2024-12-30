@@ -1,7 +1,7 @@
 # Maintainer: Winston Astrachan <winston dot astrachan at gmail dot com>
 
 pkgname=wireguard-vanity-keygen
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='WireGuard vanity key generator'
 arch=('any')
@@ -10,7 +10,7 @@ license=('MIT')
 depends=('glibc')
 makedepends=('go>=1.11')
 source=("${pkgname}-${pkgver}::https://github.com/axllent/wireguard-vanity-keygen/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('97a5b80e5a04cd8b9996d78d7a43efbfa63bc3c10213d30efcb27b656f37c37e')
+sha256sums=('efd915c549e6cc312ef472dbf854aaf7b6b0129157948c0c9a4fc8e6739c6094')
 
 build() {
     cd "${srcdir}/${pkgname}-${pkgver}"
