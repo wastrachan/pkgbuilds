@@ -1,6 +1,6 @@
 pkgbase = google-cloud-cli-gke-gcloud-auth-plugin
 	pkgdesc = A google-cloud-cli component that provides a kubectl authentication plugin for GKE.
-	pkgver = 505.0.0
+	pkgver = 506.0.0
 	pkgrel = 1
 	url = https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
 	arch = x86_64
@@ -8,7 +8,7 @@ pkgbase = google-cloud-cli-gke-gcloud-auth-plugin
 	depends = google-cloud-cli
 	depends = kubectl>=1.26
 	options = !strip
-	source = https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-cli-gke-gcloud-auth-plugin_505.0.0.orig_amd64.tar.gz
-	sha256sums = 1fea42b82243f6716b0c6f7b41c6bd0dd362a005f6a239293897fb7eb9089b75
+	source = https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux/google-cloud-cli-gke-gcloud-auth-plugin_506.0.0.orig_amd64.tar.gz
+	sha256sums = d70740d6f4f24d885cd6f35046dcb950555adcba28eb669f2828c478234ed532
 
 pkgname = google-cloud-cli-gke-gcloud-auth-plugin
