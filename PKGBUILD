@@ -13,7 +13,7 @@
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=5.1.4
+pkgver=5.1.5
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
@@ -31,8 +31,8 @@ source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.x86_64.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc.aarch64.$_pkgext")
 
 sha256sums=('22b5a35031423ff3998ed524ff7464e071d25ad99fab5ce2ebb67158e62f7b17')
-sha256sums_x86_64=('2212295452e960ef0f4f7281baa88ef0eeb5267ef10ebaf09e5f97feb60a36fe')
-sha256sums_aarch64=('56c3901be5448d66b02eb6966ff9f0fb04250d1eb1b07958f02befb88a0bb66a')
+sha256sums_x86_64=('5fa0154f15be9ede2a72c2ab06f16045ca97a8649ac5e39d9fcaeca0275f6f6b')
+sha256sums_aarch64=('8ec03ec5076dece93372bd20d2181d2e97c8f5b531a26401417ac3e9aa821ae5')
 
 prepare() {
   rm -rf usr/lib/.build-id
