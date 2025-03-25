@@ -1,51 +1,51 @@
 {
     "version": 2,
     "data": {
-        "deej": {
-            "version": "v0.9.10",
-            "gitref": "refs/tags/v0.9.10",
-            "url": "https://github.com/omriharel/deej/releases/tag/v0.9.10"
-        },
-        "gestures": {
-            "version": "0.3.1",
-            "revision": "d6ca5f23119c243cd8abcc8145187532294b8356",
-            "url": "https://gitlab.com/nokun/gestures/-/tags/0.3.1"
-        },
-        "git-secret": {
-            "version": "v0.5.0",
-            "gitref": "refs/tags/v0.5.0",
-            "url": "https://github.com/sobolevn/git-secret/releases/tag/v0.5.0"
-        },
-        "google-cloud-cli-gke-gcloud-auth-plugin": {
-            "version": "515.0.0-0"
-        },
-        "kiibohd-configurator": {
-            "version": "v1.1.0",
-            "gitref": "refs/tags/v1.1.0",
-            "url": "https://github.com/kiibohd/configurator/releases/tag/v1.1.0"
-        },
-        "pcloud-drive": {
-            "version": "1.14.10"
-        },
-        "ttf-adobe-source-code-pro": {
-            "version": "2.042R-u/1.062R-i/1.026R-vf",
-            "gitref": "refs/tags/2.042R-u/1.062R-i/1.026R-vf",
-            "url": "https://github.com/adobe-fonts/source-code-pro/releases/tag/2.042R-u/1.062R-i/1.026R-vf"
-        },
-        "ttf-adobe-source-sans": {
-            "version": "3.052R",
-            "gitref": "refs/tags/3.052R",
-            "url": "https://github.com/adobe-fonts/source-sans/releases/tag/3.052R"
-        },
-        "ttf-adobe-source-serif": {
-            "version": "4.005R",
-            "gitref": "refs/tags/4.005R",
-            "url": "https://github.com/adobe-fonts/source-serif/releases/tag/4.005R"
-        },
-        "wireguard-vanity-keygen": {
-            "version": "0.1.1",
-            "gitref": "refs/tags/0.1.1",
-            "url": "https://github.com/axllent/wireguard-vanity-keygen/releases/tag/0.1.1"
-        }
+      "deej": {
+        "version": "v0.9.10",
+        "gitref": "refs/tags/v0.9.10",
+        "url": "https://github.com/omriharel/deej/releases/tag/v0.9.10"
+      },
+      "gestures": {
+        "version": "0.3.1",
+        "revision": "d6ca5f23119c243cd8abcc8145187532294b8356",
+        "url": "https://gitlab.com/nokun/gestures/-/tags/0.3.1"
+      },
+      "git-secret": {
+        "version": "v0.5.0",
+        "gitref": "refs/tags/v0.5.0",
+        "url": "https://github.com/sobolevn/git-secret/releases/tag/v0.5.0"
+      },
+      "google-cloud-cli-gke-gcloud-auth-plugin": {
+        "version": "516.0.0-0"
+      },
+      "kiibohd-configurator": {
+        "version": "v1.1.0",
+        "gitref": "refs/tags/v1.1.0",
+        "url": "https://github.com/kiibohd/configurator/releases/tag/v1.1.0"
+      },
+      "pcloud-drive": {
+        "version": "1.14.10"
+      },
+      "ttf-adobe-source-code-pro": {
+        "version": "2.042R-u/1.062R-i/1.026R-vf",
+        "gitref": "refs/tags/2.042R-u/1.062R-i/1.026R-vf",
+        "url": "https://github.com/adobe-fonts/source-code-pro/releases/tag/2.042R-u/1.062R-i/1.026R-vf"
+      },
+      "ttf-adobe-source-sans": {
+        "version": "3.052R",
+        "gitref": "refs/tags/3.052R",
+        "url": "https://github.com/adobe-fonts/source-sans/releases/tag/3.052R"
+      },
+      "ttf-adobe-source-serif": {
+        "version": "4.005R",
+        "gitref": "refs/tags/4.005R",
+        "url": "https://github.com/adobe-fonts/source-serif/releases/tag/4.005R"
+      },
+      "wireguard-vanity-keygen": {
+        "version": "0.1.1",
+        "gitref": "refs/tags/0.1.1",
+        "url": "https://github.com/axllent/wireguard-vanity-keygen/releases/tag/0.1.1"
+      }
     }
-}
+  }
