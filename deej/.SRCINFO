@@ -1,7 +1,7 @@
 pkgbase = deej
 	pkgdesc = Open-source hardware volume mixer
 	pkgver = 0.9.10
-	pkgrel = 1
+	pkgrel = 2
 	url = http://deej.rocks/
 	install = deej.install
 	arch = any
@@ -18,4 +18,3 @@ pkgbase = deej
 	sha256sums = f9a38e7188d9dcfd089e809fd0450075acd1a89acf22d76fa55134c1c5afd654
 
 pkgname = deej
-
