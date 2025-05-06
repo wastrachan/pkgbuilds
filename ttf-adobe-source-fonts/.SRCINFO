@@ -1,7 +1,7 @@
 pkgbase = ttf-adobe-source-fonts
 	pkgdesc = TTF versions of Adobe's Source fonts (includes Source Sans, Source Serif, and Source Code Pro).
 	pkgver = 20230401200
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/adobe-fonts
 	arch = any
 	license = custom:SIL
