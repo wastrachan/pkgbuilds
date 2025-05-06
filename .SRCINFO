@@ -1,7 +1,7 @@
 pkgbase = brother-mfc-l3780cdw
 	pkgdesc = LPR and CUPS driver for the Brother MFC-L3780CDW
 	pkgver = 3.5.1_1
-	pkgrel = 1
+	pkgrel = 2
 	url = https://support.brother.com/g/b/downloadend.aspx?c=us&lang=en&prod=mfcl3780cdw_us_as&os=128&dlid=dlf105764_000&flang=4&type3=10283
 	arch = i686
 	arch = x86_64
