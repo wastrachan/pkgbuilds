@@ -1,7 +1,7 @@
 pkgbase = xerox-workcentre-6515-6510
 	pkgdesc = Xerox WorkCentre 6515 / Phaser 6510 printer driver for CUPS
 	pkgver = 5.662.0.0
-	pkgrel = 3
+	pkgrel = 4
 	url = https://www.support.xerox.com/en-us/product/workcentre-6515/content/144488?language=en&platform=win10
 	arch = x86_64
 	license = custom
