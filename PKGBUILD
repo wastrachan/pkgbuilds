@@ -2,7 +2,7 @@
 # Contributor: Plague-doctor <plague at privacyrequired dot com>
 
 pkgname=pcloud-drive
-pkgver=1.14.11
+pkgver=1.14.12
 pkgrel=1
 pkgdesc='pCloud drive. Electron edition.'
 arch=('x86_64')
@@ -14,22 +14,22 @@ options=(!strip !debug)
 replaces=('pcloud-git' 'pcloud')
 _shortname='pcloud'
 _appimage="${pkgname}-${pkgver}-${pkgrel}.AppImage"
-_api_code='XZQRe85ZLPTV99jSGRkmdR9ET2xzqHYeABBX'
+_api_code='XZcIVb5ZhHzMumagTOBxWWhbjhyv0bN7oPKk'
 _api_response="$(curl -s "https://api.pcloud.com/getpublinkdownload?code=${_api_code}")"
 _dlhost="$(echo ${_api_response} | grep -E -o '[a-zA-Z0-9\-]+\.pcloud\.com' | head -n 2 | sort -R | head -n 1)"
 _dlpath="$(echo ${_api_response} | grep -E -o "\"path\":\s{0,1}\".+\"" | cut -d '"' -f 4 | tr -d '\\')"
 source=('LICENSE'
         "${_appimage}::https://${_dlhost}${_dlpath}")
 sha256sums=('9dce0249569d9dc9f00217009880458cf669a657ebb6604b4e52be4e875f1a42'
-            '5c057e6ac58c9d03f4033145e66f50dd193100b4e2bf8acb6bee8e2c26c5dd68')
+            '5acd1fb2706758e4f0e1361fd0c876e64cd58ebbf0cf4fc242f9ce3d8c354bbe')
 
 prepare() {
-    chmod +x ${_appimage}
-    ./${_appimage} --appimage-extract
+    chmod +x "${_appimage}"
+    "./${_appimage}" --appimage-extract
 }
 
 package() {
-    cd "$srcdir"
+    cd "${srcdir}"
 
     # Create Directories
     install -d "${pkgdir}/usr/bin"
@@ -44,10 +44,15 @@ package() {
     # Install Icons, Desktop Shortcut
     find squashfs-root -type d -exec chmod 0755 {} \;
     cp -r squashfs-root/usr/share/icons/hicolor "${pkgdir}/usr/share/icons/"
-    sed -i -E "s|Exec=AppRun|Exec=env DESKTOPINTEGRATION=false /usr/bin/${_shortname}|" "squashfs-root/${_shortname}.desktop"
+
+    # Update desktop file entries
+    sed -i -E "s|Exec=AppRun|Exec=env DESKTOPINTEGRATION=false /usr/bin/${_shortname}|" \
+        "squashfs-root/${_shortname}.desktop"
     sed -i "s/Name=pcloud/Name=pCloud/" "squashfs-root/${_shortname}.desktop"
+
+    # Install desktop file
     install -Dm644 "squashfs-root/${_shortname}.desktop" -t "${pkgdir}/usr/share/applications/"
 
     # Symlink AppImage
-    ln -s "/opt/${_shortname}/${_appimage}" "${pkgdir}/usr/bin/${_shortname}"
+    ln -sf "/opt/${_shortname}/${_appimage}" "${pkgdir}/usr/bin/${_shortname}"
 }
