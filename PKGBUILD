@@ -2,7 +2,7 @@
 
 pkgname=deej
 pkgver=0.9.10
-pkgrel=1
+pkgrel=2
 pkgdesc='Open-source hardware volume mixer'
 arch=('any')
 url='http://deej.rocks/'
@@ -25,19 +25,19 @@ build() {
 }
 
 package() {
-    cd "$srcdir"
+    cd "${srcdir}"
 
     # Copy License
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
     # Create target directories
-    install -dm777 "${pkgdir}/opt/${pkgname}/logs"
+    install -dm755 "${pkgdir}/opt/${pkgname}/logs"
     install -d "${pkgdir}/usr/share/applications"
     install -d "${pkgdir}/usr/share/icons/hicolor/512x512/apps"
 
     # Copy application files
     install -Dm644 "${pkgname}-${pkgver}/assets/logo-512.png" "${pkgdir}/usr/share/icons/hicolor/512x512/apps/deej.png"
-    install -Dm666 "${pkgname}-${pkgver}/scripts/misc/default-config.yaml" "${pkgdir}/opt/${pkgname}/default-config.yaml"
+    install -Dm644 "${pkgname}-${pkgver}/scripts/misc/default-config.yaml" "${pkgdir}/opt/${pkgname}/default-config.yaml"
     install -Dm755 "${pkgname}-${pkgver}/${pkgname}-release" "${pkgdir}/opt/${pkgname}/${pkgname}"
 
     # Install desktop file
