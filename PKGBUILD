@@ -13,11 +13,14 @@
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=5.2.5
+pkgver=5.2.6
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
-license=('MIT')
+license=(
+  'GPL-3.0-or-later'
+  'LicenseRef-BeekeeperCommercialEULA'
+)
 arch=('x86_64' 'aarch64')
 
 provides=("$_pkgname")
@@ -26,15 +29,31 @@ conflicts=("$_pkgname")
 _pkgsrc="Beekeeper-Studio-$pkgver"
 _pkgext="rpm"
 
-source=("$_pkgsrc-license.txt"::"$url/raw/v$pkgver/LICENSE.md")
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.x86_64.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc.aarch64.$_pkgext")
 
-sha256sums=('22b5a35031423ff3998ed524ff7464e071d25ad99fab5ce2ebb67158e62f7b17')
-sha256sums_x86_64=('51de8f9e537b5f2bada76f89c880e390759ab260e6c3dd5a5bb8a92886b59642')
-sha256sums_aarch64=('0be200629dc3a1c982df047a695a5ca3e07ec87b072c4fa90d45d6991838c65a')
+sha256sums_x86_64=('44c4d8988fa3a4fc10987dad1a1287eee3aaf9b12ecf224a16b29cba886bb1cf')
+sha256sums_aarch64=('6c5fc6e659ec268ccf9f76aa3521d7c25274c1a3cc96c8a7a3c4b78a7ad3f849')
+
+_eula="commercial-eula"
+_eula_url="https://www.beekeeperstudio.io/legal/commercial-eula/"
 
 prepare() {
+  # commercial eula
+  curl -L --max-redirs 3 --no-progress-meter \
+    -o "$_eula-1.html" \
+    "$_eula_url"
+
+  hxnormalize -x "$_eula-1.html" \
+    | hxremove header,footer,script \
+      1> "$_eula-2.html" \
+      2> /dev/null
+
+  sed -e '/back to legal/,+1d' -i "$_eula-2.html"
+
+  w3m -O UTF-8 -cols 80 -dump "$_eula-2.html" > "$_eula.txt"
+
+  # fix launcher
   rm -rf usr/lib/.build-id
   sed -E -e 's&^Exec=.*$&Exec='"${_pkgname} %U&" \
     -e 's&^Comment=.*$&Comment='"${pkgdesc}&" \
@@ -63,12 +82,8 @@ package() {
 exec "/$_install_path/$_pkgname/$_pkgname" "\$@"
 END
 
-  # licenses
-  install -Dm644 "$_pkgsrc-license.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 \
-    "$pkgdir/$_install_path/$_pkgname/LICENSE.electron.txt" \
-    "$pkgdir/$_install_path/$_pkgname/LICENSES.chromium.html" \
-    -t "${pkgdir}/usr/share/licenses/$pkgname/"
+  # commercial eula
+  install -Dm644 "$_eula.txt" -t "$pkgdir/usr/share/licenses/$pkgname/"
 
   # permissions
   chmod -R u+rwX,go+rX,go-w "$pkgdir/"
