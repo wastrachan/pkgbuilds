@@ -3,17 +3,18 @@
 
 pkgname=pcloud-drive
 pkgver=1.14.12
-pkgrel=1
+pkgrel=2
 pkgdesc='pCloud drive. Electron edition.'
 arch=('x86_64')
 url='https://www.pcloud.com/'
-license=('custom')
+license=("LicenseRef-${pkgname}")
 depends=('fuse2' 'zlib' 'hicolor-icon-theme')
 optdepends=('libappindicator-gtk3: Tray menu support')
 options=(!strip !debug)
+install="${pkgname}.install"
 replaces=('pcloud-git' 'pcloud')
 _shortname='pcloud'
-_appimage="${pkgname}-${pkgver}-${pkgrel}.AppImage"
+_appimage="${pkgname}.AppImage"
 _api_code='XZcIVb5ZhHzMumagTOBxWWhbjhyv0bN7oPKk'
 _api_response="$(curl -s "https://api.pcloud.com/getpublinkdownload?code=${_api_code}")"
 _dlhost="$(echo ${_api_response} | grep -E -o '[a-zA-Z0-9\-]+\.pcloud\.com' | head -n 2 | sort -R | head -n 1)"

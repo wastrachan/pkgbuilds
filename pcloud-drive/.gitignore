@@ -1,6 +1,6 @@
 *.tar.xz
 *.tar.bz2
-pcloud-drive-*
+*.AppImage
 pkg
 src
 *.orig
