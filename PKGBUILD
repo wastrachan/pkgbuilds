@@ -14,7 +14,7 @@
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
 pkgver=5.2.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
 license=(
@@ -22,6 +22,11 @@ license=(
   'LicenseRef-BeekeeperCommercialEULA'
 )
 arch=('x86_64' 'aarch64')
+
+makedepends=(
+  'html-xml-utils'
+  'w3m'
+)
 
 provides=("$_pkgname")
 conflicts=("$_pkgname")

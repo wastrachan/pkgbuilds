@@ -1,12 +1,14 @@
 pkgbase = beekeeper-studio-bin
 	pkgdesc = Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
 	pkgver = 5.2.6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/beekeeper-studio/beekeeper-studio
 	arch = x86_64
 	arch = aarch64
 	license = GPL-3.0-or-later
 	license = LicenseRef-BeekeeperCommercialEULA
+	makedepends = html-xml-utils
+	makedepends = w3m
 	provides = beekeeper-studio
 	conflicts = beekeeper-studio
 	source_x86_64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v5.2.6/Beekeeper-Studio-5.2.6.x86_64.rpm
