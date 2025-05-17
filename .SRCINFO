@@ -1,7 +1,7 @@
 pkgbase = beekeeper-studio-bin
 	pkgdesc = Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
-	pkgver = 5.2.6
-	pkgrel = 2
+	pkgver = 5.2.7
+	pkgrel = 1
 	url = https://github.com/beekeeper-studio/beekeeper-studio
 	arch = x86_64
 	arch = aarch64
@@ -11,10 +11,10 @@ pkgbase = beekeeper-studio-bin
 	makedepends = w3m
 	provides = beekeeper-studio
 	conflicts = beekeeper-studio
-	source_x86_64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v5.2.6/Beekeeper-Studio-5.2.6.x86_64.rpm
-	sha256sums_x86_64 = 44c4d8988fa3a4fc10987dad1a1287eee3aaf9b12ecf224a16b29cba886bb1cf
-	source_aarch64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v5.2.6/Beekeeper-Studio-5.2.6.aarch64.rpm
-	sha256sums_aarch64 = 6c5fc6e659ec268ccf9f76aa3521d7c25274c1a3cc96c8a7a3c4b78a7ad3f849
+	source_x86_64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v5.2.7/Beekeeper-Studio-5.2.7.x86_64.rpm
+	sha256sums_x86_64 = 9384a47b83553eefb6f50c676b0dc30b7630c5020c7f80efaeec976ca9580313
+	source_aarch64 = https://github.com/beekeeper-studio/beekeeper-studio/releases/download/v5.2.7/Beekeeper-Studio-5.2.7.aarch64.rpm
+	sha256sums_aarch64 = 7974ff88d3f68af477e064f50ab3704a2258f23685e2be771e0f4fda7b0f5ead
 
 pkgname = beekeeper-studio-bin
 	depends = alsa-lib
