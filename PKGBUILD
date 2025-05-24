@@ -1,7 +1,7 @@
 # Maintainer: Winston Astrachan <winston dot astrachan at gmail dot com>
 
 pkgname=google-cloud-cli-gke-gcloud-auth-plugin
-pkgver=522.0.0
+pkgver=523.0.1
 pkgrel=1
 pkgdesc="A google-cloud-cli component that provides a kubectl authentication plugin for GKE."
 arch=('x86_64' 'aarch64')
@@ -12,8 +12,8 @@ options=('!strip')
 _download_url="https://dl.google.com/dl/cloudsdk/release/downloads/for_packagers/linux"
 source_x86_64=("${pkgname}-${pkgver}.orig_x86_64.tar.gz::${_download_url}/${pkgname}_${pkgver}.orig_amd64.tar.gz")
 source_aarch64=("${pkgname}-${pkgver}.orig_aarch64.tar.gz::${_download_url}/${pkgname}_${pkgver}.orig_aarch64.tar.gz")
-sha256sums_x86_64=('c97009f30f0c633d42c7f035524ffe06b05bb46c5724af5b5c97f2385bace414')
-sha256sums_aarch64=('1c9b0e1676afed36dffa878f0a19339e892354a85ac44c2c9582caf06d54a6a9')
+sha256sums_x86_64=('7edc2810a243aba3f3cb6ea86aaaa1356d5ee2df9519c641b00204eb629037f2')
+sha256sums_aarch64=('110e94668e6081a27b74aa19d408814634eca947dbd1453fac52788bbb01487d')
 
 package() {
     cd "${srcdir}/google-cloud-sdk"
