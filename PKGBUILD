@@ -13,7 +13,7 @@
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=5.2.10
+pkgver=5.2.12
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
@@ -37,8 +37,8 @@ _pkgext="rpm"
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.x86_64.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc.aarch64.$_pkgext")
 
-sha256sums_x86_64=('c88be3c38c0fe5d95594b30dd466e3a26aaad7f8305b597d4579814d702917dd')
-sha256sums_aarch64=('281135fe815a208e20009172c7b779adcbc5584d067dabd84acc1abbebca7057')
+sha256sums_x86_64=('4176b6f10ef48714ea286f51f6a57ca95a3a9a138e19b537dfb79d43b2dcb293')
+sha256sums_aarch64=('c0549df82ba3ad60359bd9e2712ae7b1302c74b4f9c3d3b55370e8aefce306c1')
 
 _eula="commercial-eula"
 _eula_url="https://www.beekeeperstudio.io/legal/commercial-eula/"
