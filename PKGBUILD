@@ -13,7 +13,7 @@
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=5.3.2
+pkgver=5.3.3
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
@@ -37,8 +37,8 @@ _pkgext="rpm"
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.x86_64.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc.aarch64.$_pkgext")
 
-sha256sums_x86_64=('b5f0febf9b4033b992e18ccb9e4e0a89e70b0a8083d898821dd5d64b2c774f60')
-sha256sums_aarch64=('d842aff3a10f079605754f09a70748e10c977960f9740ebe23a0399c2b32a009')
+sha256sums_x86_64=('0efed4e51dc66a7b7c57450d6103a2629a33019989beb159f1faacb6fd817d81')
+sha256sums_aarch64=('0749d4cea170da07039969ee8db3167587521d0f2cb4c1a33ad95a96cdca29d9')
 
 _eula="commercial-eula"
 _eula_url="https://www.beekeeperstudio.io/legal/commercial-eula/"
@@ -74,11 +74,11 @@ package() {
   )
 
   # main files
-  install -dm755 "$pkgdir/$_install_path/$_pkgname"
+  mkdir -pm755 "$pkgdir/$_install_path/$_pkgname"
   mv "opt/Beekeeper Studio"/* "$pkgdir/$_install_path/$_pkgname/"
 
   # share
-  install -dm755 "$pkgdir/usr/share"
+  mkdir -pm755 "$pkgdir/usr/share"
   cp -a usr/share/* "$pkgdir/usr/share/"
 
   # script
