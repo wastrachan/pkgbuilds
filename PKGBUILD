@@ -5,15 +5,11 @@
 # Contributor: Michael Lutonsky <m@luto.at>
 # Contributor: Tássio Virgínio <tassiovirginio@gmail.com>
 
-## links
-# https://www.beekeeperstudio.io
-# https://github.com/beekeeper-studio/beekeeper-studio
-
 : ${_install_path:=usr/lib}
 
 _pkgname="beekeeper-studio"
 pkgname="$_pkgname-bin"
-pkgver=5.3.3
+pkgver=5.3.4
 pkgrel=1
 pkgdesc="Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more"
 url="https://github.com/beekeeper-studio/beekeeper-studio"
@@ -37,8 +33,8 @@ _pkgext="rpm"
 source_x86_64=("$url/releases/download/v$pkgver/$_pkgsrc.x86_64.$_pkgext")
 source_aarch64=("$url/releases/download/v$pkgver/$_pkgsrc.aarch64.$_pkgext")
 
-sha256sums_x86_64=('0efed4e51dc66a7b7c57450d6103a2629a33019989beb159f1faacb6fd817d81')
-sha256sums_aarch64=('0749d4cea170da07039969ee8db3167587521d0f2cb4c1a33ad95a96cdca29d9')
+sha256sums_x86_64=('ab7256f2f40815f159f383ade8763946e25d3d842d06570544a9672776a420dc')
+sha256sums_aarch64=('0d5ca94d95e467ebf37ae8bd952b9d8a1a57dc2ebc1414027dfa94d7fbadd878')
 
 _eula="commercial-eula"
 _eula_url="https://www.beekeeperstudio.io/legal/commercial-eula/"
