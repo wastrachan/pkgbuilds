@@ -2,8 +2,8 @@
 # Contributor: Plague-doctor <plague at privacyrequired dot com>
 
 pkgname=pcloud-drive
-pkgver=1.14.12
-pkgrel=2
+pkgver=1.14.14
+pkgrel=1
 pkgdesc='pCloud drive. Electron edition.'
 arch=('x86_64')
 url='https://www.pcloud.com/'
@@ -15,14 +15,14 @@ install="${pkgname}.install"
 replaces=('pcloud-git' 'pcloud')
 _shortname='pcloud'
 _appimage="${pkgname}.AppImage"
-_api_code='XZcIVb5ZhHzMumagTOBxWWhbjhyv0bN7oPKk'
+_api_code='XZwGnW5ZrhkOy46busjMNcycWKNcbV5sKHb7'
 _api_response="$(curl -s "https://api.pcloud.com/getpublinkdownload?code=${_api_code}")"
 _dlhost="$(echo ${_api_response} | grep -E -o '[a-zA-Z0-9\-]+\.pcloud\.com' | head -n 2 | sort -R | head -n 1)"
 _dlpath="$(echo ${_api_response} | grep -E -o "\"path\":\s{0,1}\".+\"" | cut -d '"' -f 4 | tr -d '\\')"
 source=('LICENSE'
         "${_appimage}::https://${_dlhost}${_dlpath}")
 sha256sums=('9dce0249569d9dc9f00217009880458cf669a657ebb6604b4e52be4e875f1a42'
-            '5acd1fb2706758e4f0e1361fd0c876e64cd58ebbf0cf4fc242f9ce3d8c354bbe')
+            '3dcf61e542d9b762979d6de9d6c5f9540769e2e717a691e57365632bd1f6fda3')
 
 prepare() {
     chmod +x "${_appimage}"
