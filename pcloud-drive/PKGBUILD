@@ -3,7 +3,7 @@
 
 pkgname=pcloud-drive
 pkgver=1.14.14
-pkgrel=1
+pkgrel=2
 pkgdesc='pCloud drive. Electron edition.'
 arch=('x86_64')
 url='https://www.pcloud.com/'
@@ -14,7 +14,7 @@ options=(!strip !debug)
 install="${pkgname}.install"
 replaces=('pcloud-git' 'pcloud')
 _shortname='pcloud'
-_appimage="${pkgname}.AppImage"
+_appimage="${pkgname}-${pkgver}-${pkgrel}.AppImage"
 _api_code='XZwGnW5ZrhkOy46busjMNcycWKNcbV5sKHb7'
 _api_response="$(curl -s "https://api.pcloud.com/getpublinkdownload?code=${_api_code}")"
 _dlhost="$(echo ${_api_response} | grep -E -o '[a-zA-Z0-9\-]+\.pcloud\.com' | head -n 2 | sort -R | head -n 1)"
@@ -37,7 +37,7 @@ package() {
     install -dm755 "${pkgdir}/usr/share/icons/hicolor"
 
     # Install AppImage
-    install -Dm755 "${_appimage}" -t "${pkgdir}/opt/${_shortname}"
+    install -Dm755 "${_appimage}" "${pkgdir}/opt/${_shortname}/${pkgname}.AppImage"
 
     # Install License
     install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
@@ -55,5 +55,5 @@ package() {
     install -Dm644 "squashfs-root/${_shortname}.desktop" -t "${pkgdir}/usr/share/applications/"
 
     # Symlink AppImage
-    ln -sf "/opt/${_shortname}/${_appimage}" "${pkgdir}/usr/bin/${_shortname}"
+    ln -sf "/opt/${_shortname}/${pkgname}.AppImage" "${pkgdir}/usr/bin/${_shortname}"
 }
