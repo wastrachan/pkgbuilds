@@ -55,3 +55,8 @@ use_latest_release = "true"
 source = "github"
 github = "axllent/wireguard-vanity-keygen"
 use_latest_release = "true"
+
+[beekeper-studio]
+source = "github"
+github = "beekeeper-studio/beekeeper-studio"
+use_latest_release = "true"

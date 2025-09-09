@@ -1,6 +1,11 @@
 {
   "version": 2,
   "data": {
+    "beekeper-studio": {
+      "version": "v5.3.6",
+      "gitref": "refs/tags/v5.3.6",
+      "url": "https://github.com/beekeeper-studio/beekeeper-studio/releases/tag/v5.3.6"
+    },
     "deej": {
       "version": "v0.9.10",
       "gitref": "refs/tags/v0.9.10",
@@ -17,7 +22,7 @@
       "url": "https://github.com/sobolevn/git-secret/releases/tag/v0.5.0"
     },
     "google-cloud-cli-gke-gcloud-auth-plugin": {
-      "version": "537.0.0-0"
+      "version": "538.0.0-0"
     },
     "kiibohd-configurator": {
       "version": "v1.1.0",

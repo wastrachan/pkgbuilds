@@ -15,6 +15,7 @@ Repository of packages maintained by `rew1red` on the AUR, intended for use with
 -   [wireguard-vanity-keygen-bin](https://aur.archlinux.org/packages/wireguard-vanity-keygen-bin/): WireGuard vanity key generator
 -   [xerox-workcentre-6515-6510](https://aur.archlinux.org/packages/xerox-workcentre-6515-6510/): Xerox WorkCentre 6515 / Phaser 6510 printer driver for CUPS
 -   [brother-mfc-l3780cdw](https://aur.archlinux.org/packages/brother-mfc-l3780cdw/): Brother MCF-L3780CDW printer driver for CUPS
+-   [beekeeper-studio-bin](https://aur.archlinux.org/packages/beekeeper-studio-bin): Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and more
 
 ## Usage
 
