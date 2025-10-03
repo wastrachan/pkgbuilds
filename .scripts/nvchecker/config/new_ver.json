@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "beekeper-studio": {
-      "version": "v5.4.0",
-      "gitref": "refs/tags/v5.4.0",
-      "url": "https://github.com/beekeeper-studio/beekeeper-studio/releases/tag/v5.4.0"
+      "version": "v5.4.1",
+      "gitref": "refs/tags/v5.4.1",
+      "url": "https://github.com/beekeeper-studio/beekeeper-studio/releases/tag/v5.4.1"
     },
     "deej": {
       "version": "v0.9.10",
