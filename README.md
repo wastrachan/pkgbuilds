@@ -1,5 +1,8 @@
 # PKGBUILD Files
 
+> [!IMPORTANT]
+> I will be orphaning the packages that I maintain in this repository at the end of October, 2025. I hold a great fondness for Arch Linux and always will-- however I find myself in a position where I'm using it less and less in my professional life and don't have the time to maintain PKGBUILDs any longer. This repository and it's parts are available to anybody who takes these packages over.
+
 Repository of packages maintained by `rew1red` on the AUR, intended for use with the [`aurpublish`](https://github.com/eli-schwartz/aurpublish) helper.
 
 ## Packages

@@ -12,21 +12,6 @@ help:
 	@echo "  update                                          Update all packages from AUR (pull co-maintainer edits)"
 	@echo "  outdated                                        Print out-of-date status of all packages"
 	@echo "  clean                                           Delete build (git ignored) files"
-	@echo "  docker-build                                    Build test image"
-	@echo "  docker-clean                                    Delete test image"
-	@echo ""
-	@echo "  test-deej                                       Test deej's pkgbuild in docker"
-	@echo "  test-gestures                                   Test gestures's pkgbuild in docker"
-	@echo "  test-git-secret                                 Test git-secret's pkgbuild in docker"
-	@echo "  test-google-cloud-cli-gke-gcloud-auth-plugin    Test google-cloud-cli-gke-gcloud-auth-plugin's pkgbuild in docker"
-	@echo "  test-kiibohd-configurator-bin                   Test kiibohd-configurator-bin's pkgbuild in docker"
-	@echo "  test-pcloud-drive                               Test pcloud-drive's pkgbuild in docker"
-	@echo "  test-ttf-adobe-source-fonts                     Test -ttf-adobe-source-fonts's pkgbuild in docker"
-	@echo "  test-wireguard-vanity-keygen                    Test wireguard-vanity-keygen's pkgbuild in docker"
-	@echo "  test-wireguard-vanity-keygen-bin                Test wireguard-vanity-keygen-bin's pkgbuild in docker"
-	@echo "  test-xerox-workcentre-6515-6510                 Test xerox-workcentre-6515-6510's pkgbuild in docker"
-	@echo "  test-brother-mfc-l3780cdw                       Test brother-mfc-l3780cdw's pkgbuild in docker"
-	@echo "  test-beekeeper-studio-bin                       Test beekeeper-studio-bin's pkgbuild in docker"
 	@echo ""
 	@echo "  publish-deej                                    Commit and publish deej to AUR"
 	@echo "  publish-gestures                                Commit and publish gestures to AUR"
@@ -60,70 +45,6 @@ outdated:
 .PHONY: clean
 clean:
 	git clean -Xdi
-
-.PHONY: docker-build
-docker-build:
-	docker build --tag=pkgbuild .
-
-.PHONY: docker-clean
-docker-clean:
-	docker rmi --force pkgbuild || true
-
-.PHONY: test-deej
-test-deej: PACKAGE=deej
-test-deej: .test
-
-.PHONY: test-gestures
-test-gestures: PACKAGE=gestures
-test-gestures: .test
-
-.PHONY: test-git-secret
-test-git-secret: PACKAGE=git-secret
-test-git-secret: .test
-
-.PHONY: test-google-cloud-cli-gke-gcloud-auth-plugin
-test-google-cloud-cli-gke-gcloud-auth-plugin: PACKAGE=google-cloud-cli-gke-gcloud-auth-plugin
-test-google-cloud-cli-gke-gcloud-auth-plugin: .test
-
-.PHONY: test-kiibohd-configurator-bin
-test-kiibohd-configurator-bin: PACKAGE=kiibohd-configurator-bin
-test-kiibohd-configurator-bin: .test
-
-.PHONY: test-pcloud-drive
-test-pcloud-drive: PACKAGE=pcloud-drive
-test-pcloud-drive: .test
-
-.PHONY: test-ttf-adobe-source-fonts
-test-ttf-adobe-source-fonts: PACKAGE=ttf-adobe-source-fonts
-test-ttf-adobe-source-fonts: .test
-
-.PHONY: test-wireguard-vanity-keygen
-test-wireguard-vanity-keygen: PACKAGE=wireguard-vanity-keygen
-test-wireguard-vanity-keygen: .test
-
-.PHONY: test-wireguard-vanity-keygen-bin
-test-wireguard-vanity-keygen-bin: PACKAGE=wireguard-vanity-keygen-bin
-test-wireguard-vanity-keygen-bin: .test
-
-.PHONY: test-xerox-workcentre-6515-6510
-test-xerox-workcentre-6515-6510: PACKAGE=xerox-workcentre-6515-6510
-test-xerox-workcentre-6515-6510: .test
-
-.PHONY: test-brother-mfc-l3780cdw
-test-brother-mfc-l3780cdw: PACKAGE=brother-mfc-l3780cdw
-test-brother-mfc-l3780cdw: .test
-
-.PHONY: test-beekeeper-studio-bin
-test-beekeeper-studio-bin: PACKAGE=beekeeper-studio-bin
-test-beekeeper-studio-bin: .test
-
-.PHONY: .test
-.test: docker-build
-	docker run --rm \
-               --volume=$(shell pwd):/pkg \
-               -w /pkg/${PACKAGE} \
-               --user $(shell id -u):$(shell id -g) \
-               pkgbuild
 
 .PHONY: publish-deej
 publish-deej: PACKAGE=deej
